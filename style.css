@@ -1,3 +1,4 @@
+/* General Body Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,28 +10,23 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Container Styles */
 .container {
-    width: 500px;
+    width: 800px; /* Updated width for consistency */
     height: auto;
-    text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h1 {
+/* Heading Styles */
+h1, h2 {
     margin-bottom: 20px;
 }
 
-
-
-.btn-container{
-    display: flex;
-    justify-content: center; /* Centering buttons */
-    gap: 10px;
-}
-
+/* Button Styles */
 .btn {
     background-color: #007bff;
     color: #fff;
@@ -39,7 +35,7 @@ h1 {
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Include color transition */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
@@ -47,8 +43,14 @@ h1 {
     color: #fff;
 }
 
-/* Ensure this CSS is specific to the login page to avoid conflicts with the main page styles */
+/* Button Container Styles */
+.btn-container {
+    display: flex;
+    justify-content: center; /* Centering buttons */
+    gap: 10px; /* Space between buttons */
+}
 
+/* Login Container Styles */
 .login-container {
     width: 500px;
     background-color: #fff;
@@ -57,10 +59,6 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 0 auto; /* Center horizontally if needed */
-}
-
-.login-container h1 {
-    margin-bottom: 20px;
 }
 
 .input-group {
@@ -113,4 +111,104 @@ h1 {
 
 .register-link a:hover {
     text-decoration: underline;
+}
+
+/* Dashboard Layout Styles */
+.dashboard-layout {
+    display: flex;
+}
+
+.menu {
+    width: 200px;
+    padding-right: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Main Image and News Section Styles */
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.news {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.news ul {
+    padding-left: 20px;
 }
