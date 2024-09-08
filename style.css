@@ -1,3 +1,4 @@
+/* General Body Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,28 +10,23 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Container Styles */
 .container {
-    width: 500px;
+    width: 800px; /* Updated width for consistency */
     height: auto;
-    text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h1 {
+/* Heading Styles */
+h1, h2 {
     margin-bottom: 20px;
 }
 
-
-
-.btn-container{
-    display: flex;
-    justify-content: center; /* Centering buttons */
-    gap: 10px;
-}
-
+/* Button Styles */
 .btn {
     background-color: #007bff;
     color: #fff;
@@ -39,7 +35,7 @@ h1 {
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Include color transition */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
@@ -47,8 +43,14 @@ h1 {
     color: #fff;
 }
 
-/* Ensure this CSS is specific to the login page to avoid conflicts with the main page styles */
+/* Button Container Styles */
+.btn-container {
+    display: flex;
+    justify-content: center; /* Centering buttons */
+    gap: 10px; /* Space between buttons */
+}
 
+/* Login Container Styles */
 .login-container {
     width: 500px;
     background-color: #fff;
@@ -57,10 +59,6 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 0 auto; /* Center horizontally if needed */
-}
-
-.login-container h1 {
-    margin-bottom: 20px;
 }
 
 .input-group {
@@ -114,3 +112,4 @@ h1 {
 .register-link a:hover {
     text-decoration: underline;
 }
+
