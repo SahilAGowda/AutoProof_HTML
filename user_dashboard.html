@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-layout">
+            <div class="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><button class="btn">Dashboard</button></li>
+                    <li><button class="btn">Reports</button></li>
+                    <li><button class="btn">Settings</button></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="header">
+                    <h1>Dashboard</h1>
+                    <div class="toggle-container">
+                        <span>Network Security</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="securityToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <img src="/api/placeholder/400/200" alt="Dashboard Main Visual" class="main-image">
+                <div class="news">
+                    <h2>News</h2>
+                    <ul>
+                        <li>Microsoft Exchange vulnerabilities exploited to deploy malware.</li>
+                        <li>Ransomware attacks targeting healthcare institutions.</li>
+                        <li>Software supply chain attack affecting multiple organizations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('securityToggle').addEventListener('change', function() {
+            console.log('Network Security:', this.checked ? 'On' : 'Off');
+        });
+    </script>
+</body>
+</html>
