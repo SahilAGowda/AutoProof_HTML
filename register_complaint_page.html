@@ -33,7 +33,6 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-           
         }
 
         .input-group label {
@@ -44,9 +43,7 @@
 
         .input-group input[type="radio"] {
             margin-right: 10px;
-            transform: scale(2); 
-             
-           
+            transform: scale(2);
         }
 
         .submit-btn {
@@ -64,7 +61,8 @@
         .submit-btn:hover {
             background-color: #45a049;
         }
-        .question{
+
+        .question {
             font-size: 20px;
             color: #555;
             text-decoration: underline;
@@ -75,7 +73,7 @@
     <div class="container">
         <h1>Register Complaint</h1>
         <br>
-        <p class="question"> Select the type of Attack you have been a victim of:</p>
+        <p class="question">Select the type of Attack you have been a victim of:</p>
         <div class="input-group">
             <input type="radio" id="option1" name="complaint" value="option1">
             <label for="option1">Online Shopping Scam</label>
@@ -95,10 +93,38 @@
             <input type="radio" id="option4" name="complaint" value="option4">
             <label for="option4">Ransomware Attack</label>
         </div>
-
         <br/>
         <br/>
         <button class="submit-btn">Submit</button>
     </div>
+
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="complaint"]');
+        const submitButton = document.querySelector('.submit-btn');
+
+        submitButton.addEventListener('click', () => {
+            for (let i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    const selectedOption = radioButtons[i].value;
+                    switch (selectedOption) {
+                        case 'option1':
+                            window.location.href = 'online_shopping_scam.html';
+                            break;
+                        case 'option2':
+                            window.location.href = 'phishing.html';
+                            break;
+                        case 'option3':
+                            window.location.href = 'id_theft.html';
+                            break;
+                        case 'option4':
+                            window.location.href = 'ransomware_attack.html';
+                            break;
+                    }
+                    return;
+                }
+            }
+            alert('Please select an option before submitting.');
+        });
+    </script>
 </body>
 </html>
