@@ -112,4 +112,7 @@ h1, h2 {
 .register-link a:hover {
     text-decoration: underline;
 }
-
+ a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+ }
