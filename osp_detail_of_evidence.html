@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Problem Submission Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 160px;
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 8px;
+      width: auto;
+    }
+
+    .datetime-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .datetime-group .form-group {
+      flex: 1;
+      margin-right: 16px;
+    }
+
+    .datetime-group .form-group:last-child {
+      margin-right: 0;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <h1 style="text-align: center;color: #007bff;">Register Complaint Page</h1>
+  <div class="container">
+    <h2 style="color: #007bff;">Evidence</h2>
+
+    <div class="datetime-group">
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="problem">Problem Description:</label>
+      <textarea id="problem" name="problem" placeholder="Enter your problem here..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Website URL:</label>
+      <input type="text" id="name" name="name" placeholder="Enter the fraud webpage email " required>
+    </div>
+
+    <div class="form-group">
+      <label>Outcome:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="priority" value="low"> Damaged Product </label>
+        <label><input type="radio" name="priority" value="medium"> Product Not Deliveresd</label>
+        <label><input type="radio" name="priority" value="high">Other</label>
+      </div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </div>
+</body>
+</html>
