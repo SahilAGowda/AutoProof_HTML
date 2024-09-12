@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Alerts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #f9f9f9;
+            --text-color: #333;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .header i {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .alert-button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .alert-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .alert-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .alert-button.active i {
+            transform: rotate(180deg);
+        }
+
+        .info-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-box h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .info-box p {
+            margin: 0.8rem 0;
+        }
+
+        .info-box ul {
+            padding-left: 1.5rem;
+            margin: 0.8rem 0;
+        }
+
+        .info-box ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .purchase-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .purchase-button:hover {
+            background-color: #2980b9;
+        }
+
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #c0392b;
+        } a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h1>Security Alerts</h1>
+        </div>
+        <button class="alert-button" onclick="toggleInfoBox('malwareDetected')">
+            Malware Detected
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="malwareDetected" class="info-box">
+            <h2>Malware Detected on Your System</h2>
+            <p><strong>Severity:</strong> High</p>
+            <p><strong>Description:</strong> Malicious software has been detected on your system. This could compromise your data and system integrity.</p>
+            <p><strong>Recommended Actions:</strong></p>
+            <ul>
+                <li>Run a full system scan with your antivirus software</li>
+                <li>Update your antivirus definitions</li>
+                <li>Avoid opening suspicious emails or downloading unknown files</li>
+            </ul>
+            <button class="purchase-button" onclick="window.location.href='https://www.amazon.in/McAfee-Antivirus-Plus-Years-Activation/dp/B075S53HNV?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3EKP5QL0PRET3'">Purchase Antivirus Software</button>
+        </div>
+        <button class="alert-button" onclick="toggleInfoBox('suspiciousLogin')">
+            Suspicious Login Attempt
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="suspiciousLogin" class="info-box">
+            <h2>Suspicious Login Attempt Detected</h2>
+            <p><strong>Severity:</strong> Medium</p>
+            <p><strong>Description:</strong> An unusual login attempt has been detected on your account from an unfamiliar location or device.</p>
+            <p><strong>Recommended Actions:</strong></p>
+            <ul>
+                <li>Change your password immediately</li>
+                <li>Enable two-factor authentication if not already active</li>
+                <li>Review your recent account activity</li>
+            </ul>
+            <button class="purchase-button" onclick="window.location.href='https://example.com/2fa'">Enable Two-Factor Authentication</button>
+        </div>
+        <button class="alert-button" onclick="toggleInfoBox('dataBreachNotification')">
+            Data Breach Notification
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="dataBreachNotification" class="info-box">
+            <h2>Your Data May Have Been Compromised</h2>
+            <p><strong>Severity:</strong> High</p>
+            <p><strong>Description:</strong> A service you use has reported a data breach that may have exposed your personal information.</p>
+            <p><strong>Recommended Actions:</strong></p>
+            <ul>
+                <li>Change passwords for the affected service and any other accounts using the same password</li>
+                <li>Monitor your accounts for any suspicious activity</li>
+                <li>Consider using a credit monitoring service</li>
+            </ul>
+            <button class="purchase-button" onclick="window.location.href='https://www.manageengine.com/network-monitoring/?network=g&device=c&keyword=network%20monitoring%20in%20aws&campaignid=21053200680&creative=692233345637&matchtype=e&adposition=&placement=&adgroup=162444863707&targetid=kwd-836154114122&gad_source=1&gclid=CjwKCAjw_4S3BhAAEiwA_64YhrDtVThcq22TLxfl-l8wHwfV1T--wUjj64bIL2hiIMwUFsre_QjjxRoCi70QAvD_BwE'">Purchase Credit Monitoring Service</button>
+        </div>
+        <button class="alert-button" onclick="toggleInfoBox('outdatedSoftware')">
+            Outdated Software
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="outdatedSoftware" class="info-box">
+            <h2>Critical Software Updates Available</h2>
+            <p><strong>Severity:</strong> Medium</p>
+            <p><strong>Description:</strong> Some of your software is out of date and may contain security vulnerabilities.</p>
+            <p><strong>Recommended Actions:</strong></p>
+            <ul>
+                <li>Update all software to the latest versions</li>
+                <li>Enable automatic updates where possible</li>
+                <li>Regularly check for and install updates</li>
+            </ul>
+            <button class="purchase-button" onclick="window.location.href='https://www.amazon.in/AutoCAD-Software-Windows-included-Subscription/dp/B0D1MGBL13?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A4SUHOFGVOSMY'">Purchase Software Update Service</button>
+        </div>
+       <a href="prevention_dashboard.html"><button class="back-button">Return to Dashboard</button></a>
+    </div>
+
+    <script>
+        function toggleInfoBox(id) {
+            const infoBox = document.getElementById(id);
+            const button = document.querySelector(`[onclick="toggleInfoBox('${id}')"]`);
+            const allInfoBoxes = document.querySelectorAll('.info-box');
+            const allButtons = document.querySelectorAll('.alert-button');
+
+            allInfoBoxes.forEach(box => {
+                if (box.id !== id) {
+                    box.style.display = 'none';
+                }
+            });
+
+            allButtons.forEach(btn => {
+                if (btn !== button) {
+                    btn.classList.remove('active');
+                }
+            });
+
+            if (infoBox.style.display === 'none' || infoBox.style.display === '') {
+                infoBox.style.display = 'block';
+                button.classList.add('active');
+            } else {
+                infoBox.style.display = 'none';
+                button.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Actionable Tips</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+        .header i {
+            margin-right: 15px;
+            color: #3498db;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+        .button i {
+            margin-right: 15px;
+            font-size: 20px;
+            color: #3498db;
+        }
+        .button span {
+            flex-grow: 1;
+            text-align: left;
+            font-weight: 600;
+        }
+        .content {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .content h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        .content ul li {
+            margin-bottom: 8px;
+        }
+        .back-button {
+            display: block;
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-lightbulb"></i>
+            Quick Actionable Tips
+        </div>
+        <div class="button" onclick="toggleContent('content1')">
+            <i class="fas fa-lock"></i>
+            <span>Enable 2FA</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div id="content1" class="content">
+            <h3>Protect your accounts with 2FA</h3>
+            <p><strong>Overview:</strong> Enable 2FA to add an extra layer of security to your accounts.</p>
+            <p><strong>Why it's important:</strong></p>
+            <ul>
+                <li>Prevents unauthorized access</li>
+                <li>Adds an extra security layer</li>
+                <li>Easy to set up and use</li>
+            </ul>
+            <p><strong>How to enable:</strong></p>
+            <ol>
+                <li>Go to account security settings</li>
+                <li>Select 'Two-Factor Authentication'</li>
+                <li>Follow on-screen instructions</li>
+            </ol>
+        </div>
+        <div class="button" onclick="toggleContent('content2')">
+            <i class="fas fa-key"></i>
+            <span>Use Strong Passwords</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div id="content2" class="content">
+            <h3>Strengthen your account security</h3>
+            <p><strong>Overview:</strong> Create unique, strong passwords for each account to enhance security.</p>
+            <p><strong>Why it matters:</strong></p>
+            <ul>
+                <li>Prevents unauthorized access</li>
+                <li>Reduces risk of multiple account breaches</li>
+            </ul>
+            <p><strong>Password creation tips:</strong></p>
+            <ul>
+                <li>Mix letters, numbers, and symbols</li>
+                <li>Avoid personal information</li>
+                <li>Use a password manager</li>
+            </ul>
+        </div>
+        <div class="button" onclick="toggleContent('content3')">
+            <i class="fas fa-database"></i>
+            <span>Backup Data</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div id="content3" class="content">
+            <h3>Safeguard your information</h3>
+            <p><strong>Overview:</strong> Regular backups ensure data recovery in case of loss.</p>
+            <p><strong>Benefits:</strong></p>
+            <ul>
+                <li>Protects against data loss</li>
+                <li>Enables quick data recovery</li>
+            </ul>
+            <p><strong>Backup steps:</strong></p>
+            <ol>
+                <li>Choose external drive or cloud storage</li>
+                <li>Set up automatic backups</li>
+                <li>Verify backup integrity regularly</li>
+            </ol>
+        </div>
+        <a href="prevention_dashboard.html" class="back-button">Go Back</a>
+    </div>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            var allContents = document.getElementsByClassName('content');
+            for (var i = 0; i < allContents.length; i++) {
+                if (allContents[i].id !== id) {
+                    allContents[i].style.display = 'none';
+                }
+            }
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

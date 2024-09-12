@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Security Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .header i {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .tool-button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .tool-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tool-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .tool-button.active i {
+            transform: rotate(180deg);
+        }
+
+        .info-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-box h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .info-box p {
+            margin: 0.8rem 0;
+        }
+
+        .info-box ul {
+            padding-left: 1.5rem;
+            margin: 0.8rem 0;
+        }
+
+        .info-box ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #3a7bc8;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-shield-alt"></i>
+            <h1>Recommended Security Tools</h1>
+        </div>
+        <button class="tool-button" onclick="toggleInfoBox('antivirus')">
+            Antivirus Tool
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="antivirus" class="info-box">
+            <h2>Protect your devices from malware and online threats</h2>
+            <p><strong>Overview:</strong> Keep your devices safe from malware and online threats with reliable antivirus software. A good antivirus tool scans for malicious software, protects against viruses, and keeps your personal data secure.</p>
+            <p><strong>Recommended Antivirus Software:</strong></p>
+            <ul>
+                <li>Avast Antivirus</li>
+                <li>McAfee Antivirus</li>
+                <li>Bitdefender Antivirus</li>
+            </ul>
+        </div>
+        <button class="tool-button" onclick="toggleInfoBox('passwordManager')">
+            Password Manager
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="passwordManager" class="info-box">
+            <h2>Protect your accounts by securely managing your passwords</h2>
+            <p><strong>Overview:</strong> Keep your accounts safe by using a reliable password manager. A good password manager stores all your passwords in an encrypted vault, generates strong passwords, and automatically fills them in, ensuring your online security.</p>
+            <p><strong>Recommended Password Managers:</strong></p>
+            <ul>
+                <li>LastPass</li>
+                <li>Dashlane</li>
+                <li>1Password</li>
+            </ul>
+        </div>
+        <button class="tool-button" onclick="toggleInfoBox('vpnTool')">
+            VPN Tool
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="vpnTool" class="info-box">
+            <h2>Protect your online privacy with a Virtual Private Network (VPN)</h2>
+            <p><strong>Overview:</strong> Secure your internet connection and protect your online activities with a reliable VPN tool. A good VPN encrypts your data, hides your IP address, and allows you to browse the web anonymously.</p>
+            <p><strong>Recommended VPN Tools:</strong></p>
+            <ul>
+                <li>NordVPN</li>
+                <li>ExpressVPN</li>
+                <li>CyberGhost VPN</li>
+            </ul>
+        </div>
+        <button class="tool-button" onclick="toggleInfoBox('firewall')">
+            Firewall
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="firewall" class="info-box">
+            <h2>Protect your network with a reliable firewall</h2>
+            <p><strong>Overview:</strong> A firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules. It establishes a barrier between a trusted internal network and untrusted external networks.</p>
+            <p><strong>Recommended Firewalls:</strong></p>
+            <ul>
+                <li>ZoneAlarm</li>
+                <li>Comodo Firewall</li>
+                <li>GlassWire</li>
+            </ul>
+        </div>
+        <a href="prevention_dashboard.html"><button class="back-button">Go Back</button></a>
+    </div>
+
+    <script>
+        function toggleInfoBox(id) {
+            const infoBox = document.getElementById(id);
+            const button = document.querySelector(`[onclick="toggleInfoBox('${id}')"]`);
+            const allInfoBoxes = document.querySelectorAll('.info-box');
+            const allButtons = document.querySelectorAll('.tool-button');
+
+            allInfoBoxes.forEach(box => {
+                if (box.id !== id) {
+                    box.style.display = 'none';
+                }
+            });
+
+            allButtons.forEach(btn => {
+                if (btn !== button) {
+                    btn.classList.remove('active');
+                }
+            });
+
+            if (infoBox.style.display === 'none' || infoBox.style.display === '') {
+                infoBox.style.display = 'block';
+                button.classList.add('active');
+            } else {
+                infoBox.style.display = 'none';
+                button.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
